@@ -232,6 +232,12 @@ class Player {
     }
 
     move(entityList) {
+        // 何故か振り子が触れない不具合が発生した。再現方法が不明。
+        // これはその応急処置
+        if (Math.abs(this.#maxRadian) < this.#radianEpsilon) {
+            this.#maxRadian = 0;
+        }
+        
         if (this.#actStatus === "death") {
             this.#hookMove(entityList);
             return;
