@@ -77,13 +77,13 @@ function respaonOrdinalNum() {
 }
 
 // エディション
-const isInmu = (new URL(window.location.href)).searchParams.get("inmu") === "true";
+const isInmu = (new URL(window.location.href)).searchParams.get("inmu") !== "false";
 const isDebug = (new URL(window.location.href)).searchParams.get("debug") === "true";
 const edition = isInmu ? "INMU" : "健全";
 
 if (isInmu) {
-    editionDom.innerText = "通常版";
-    editionDom.href = "./";
+    editionDom.innerText = "ななっち版";
+    editionDom.href = "./?inmu=false";
 }
 else {
     editionDom.innerText = "野獣先輩版";
