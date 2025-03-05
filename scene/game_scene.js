@@ -53,7 +53,6 @@ class GameScene extends Scene {
 
         loadImage("asset/虚無.png").then(image => {
             this.#backgroundImage = image;
-            this.#startAnimation();
 
             this.#saveFunc = () => {
                 if (this.#player.isGoal) {
@@ -72,6 +71,7 @@ class GameScene extends Scene {
             }
             
             this.#isLoaded = true;
+            this.#startAnimation();
         });
     }
 
